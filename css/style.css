@@ -18,27 +18,26 @@
 body{
     background-color: var(--DarkBlue);
     font-family: 'Manrope', sans-serif;
-    
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    margin-top: 60px  
     
 }
 
 
-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-   
-}
+
 
 
 .card {
     background-color: var(--DarkGrayishBlue); 
     border-radius: 12px;
-    box-shadow: 10px 10px 15px hsla(218, 23%, 16%, .1);
-    height: 200px;
-    width: 460px;
-    padding: 30px;
+    box-shadow: 0 0 10px  rgba(2, 3, 5, 0.24);
+    height: 300px;
+    width: 500px;
+    padding: 40px;
+    position: relative;
+    margin-bottom: 50px;
    
    
 }
@@ -60,10 +59,12 @@ section {
     text-align: center;
 }
 
-p{
-    color: var(--LightCyan);
-    font-size: 1.2em;
+p {
+    color: var(--LightCyan); 
+    font-size: 1.6em;
+    padding-top: 40px;
 }
+
 
 .icons{
     display: flex;
@@ -71,7 +72,14 @@ p{
     align-items: center;
     gap: 20px;
     justify-content: center;
-    margin-bottom: -50px;
+  
+}
+
+.divider__desktop{
+    width: 400px;
+    position: absolute;
+    top: 70%;
+   
 }
 
 .divider__mobile{
@@ -84,17 +92,57 @@ button{
     border-radius: 50%;
     margin-top: 30px;
     padding: 10px 15px;   
+    position: absolute;
+    top: 85%;
     
 }
 
 button img {
+    height: 15px;
     width: 15px;
-    
-    
+       
 }
 
 
 button:hover{
     box-shadow: 0 0 20px hsl(150, 100%, 66%);
     cursor: pointer;
+}
+
+
+@media (max-width: 48em){
+    
+    .card {
+        font-size: 1em;
+        height: 300px;
+        max-width: 350px;
+        padding: 20px;
+    }
+
+    .divider__desktop{
+        display: none;
+    }
+
+    .divider__mobile{
+        display: block;
+        position: absolute;
+        top: 70%;
+        width: 280px;
+    }
+}
+
+@media (max-width: 20em){
+    .card{
+        height: 250px;
+        max-width: 275px;
+    }
+
+    .text {
+        padding: 9px;
+    }
+
+
+    .button {
+        top: 70%;
+    }
 }
